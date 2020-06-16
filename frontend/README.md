@@ -28,3 +28,12 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+Deploy on Aws Beanstalk
+```
+eb init -p docker demo3
+eb init -i
+eb local run --port 8080
+eb create demo3-env3
+```
