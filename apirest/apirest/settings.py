@@ -23,9 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a6n2)dujmalbwz#cfqrst8b!6dqj34wje0#&a&2fo=^6$z))+a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['django-env.eba-sprcxzrc.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = [
+    'localhost', 
+    'localhost:8000', 
+    'django-api-env1.eba-iyabx2k9.us-east-1.elasticbeanstalk.com'
+]
 
 
 # Application definition
@@ -110,7 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
@@ -122,7 +128,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+#STATIC_ROOT = 'static'
+#STATIC_ROOT = '/var/app/current/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
