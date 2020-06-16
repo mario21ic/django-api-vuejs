@@ -23,13 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a6n2)dujmalbwz#cfqrst8b!6dqj34wje0#&a&2fo=^6$z))+a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost', 
-    'localhost:8000', 
-    'django-api-env1.eba-iyabx2k9.us-east-1.elasticbeanstalk.com'
+    'localhost',
+    'apirest-env1.eba-32tz3wgp.us-east-1.elasticbeanstalk.com'
 ]
 
 

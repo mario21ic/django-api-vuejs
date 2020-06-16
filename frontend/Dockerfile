@@ -12,8 +12,8 @@ FROM generator as builder
 WORKDIR /app/src
 RUN npm run build
 
-#FROM nginx:1.13.6
-FROM nginx:alpine
+FROM nginx:1.13.6
+#FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/src/dist .
 EXPOSE 80
