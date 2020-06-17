@@ -1,0 +1,30 @@
+pipeline {
+  agent any
+  options {
+    timestamps()
+    timeout(time: 1, unit: 'HOURS')
+  }
+  environment {
+    ARTIFACTOR = "${env.BUILD_NUMBER}.zip"
+  }
+  parameters {
+    string(name: 'SLACK_CHANNEL', defaultValue: '#deploys', description: '')
+  }
+  stages {
+    stage("Repository") {
+      steps {
+        //git url: "https://github.com/mario21ic/django-api-vuejs.git"
+        checkout scm
+      }
+    }
+    stage("Build") {
+      steps {
+        echo "build"
+        sh "cd django-api-vuejs/frontend"
+        sh "docker build -t mario21ic/vuejs:v$BUILD_NUMBER ./"
+      }
+    }
+  } 
+  
+}
+
